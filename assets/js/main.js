@@ -1,26 +1,26 @@
 /*=============== MIXITUP FILTER PORTFOLIO ===============*/
-let mixerPortfolio = mixitup(".work__container", {
+let mixerPortfolio = mixitup(".game__container", {
   selectors: {
-    target: ".work__card",
+    target: ".game__card",
   },
   animation: {
     duration: 300,
   },
 });
 
-/*===== Link Active Work =====*/
-const linkWork = document.querySelectorAll(".work__item");
+/*===== Link Active Game =====*/
+const linkGame = document.querySelectorAll(".game__item");
 
-function activeWork() {
-  linkWork.forEach((l) => l.classList.remove("active-work"));
-  this.classList.add("active-work");
+function activeGame() {
+  linkGame.forEach((l) => l.classList.remove("active-game"));
+  this.classList.add("active-game");
 }
 
-linkWork.forEach((l) => l.addEventListener("click", activeWork));
+linkGame.forEach((l) => l.addEventListener("click", activeGame));
 
-/*===== Work Popup =====*/
+/*===== Game Popup =====*/
 document.addEventListener("click", (e) => {
-  if (e.target.classList.contains("work__button")) {
+  if (e.target.classList.contains("game__button")) {
     togglePortfolioPopUp();
     portfolioItemDetails(e.target.parentElement);
   }
@@ -36,9 +36,9 @@ document
 
 function portfolioItemDetails(portfolioItem) {
   document.querySelector(".pp__thumbnail img").src =
-    portfolioItem.querySelector(".work__img").src;
+    portfolioItem.querySelector(".game__img").src;
   document.querySelector(".portfolio__popup-subtitle span").innerHTML =
-    portfolioItem.querySelector(".work__title").innerHTML;
+    portfolioItem.querySelector(".game__title").innerHTML;
   document.querySelector(".portfolio__popup-body").innerHTML =
     portfolioItem.querySelector(".portfolio__item-details").innerHTML;
 }
